@@ -20,3 +20,16 @@ android {
     }
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.harshtomar001"
+                artifactId = "VertlixUtils"
+                version = "1.0.5"
+
+                from(components["release"])
+            }
+        }
+    }
+}
