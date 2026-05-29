@@ -3,6 +3,11 @@ plugins {
     id("maven-publish")
 }
 
+repositories {
+    google()
+    mavenCentral()
+}
+
 android {
     namespace = "com.vertlix.utils"
     compileSdk = 35
@@ -36,4 +41,5 @@ afterEvaluate {
             }
         }
     }
+}
 }
