@@ -10,7 +10,6 @@ import android.provider.MediaStore;
 import android.widget.Toast;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.harsh.pdfstudio.model.RecentFileItem;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Type;
@@ -37,7 +36,7 @@ public class SaveFile {
             if (downloadUri != null && inputStream != null) {
                 OutputStream outputStream = resolver.openOutputStream(downloadUri);
 
-                byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[8192];
                 int length;
 
                 while ((length = inputStream.read(buffer)) > 0) {
