@@ -1,4 +1,4 @@
-package com.harsh.pdfstudio.model;
+package com.vertlix.utils.file;
 
 public class RecentFileItem {
     String pdfName;
