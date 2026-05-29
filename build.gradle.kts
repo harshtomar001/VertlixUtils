@@ -28,6 +28,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 }
+dependencies {
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.guava:guava:33.2.1-android")
+}
 
 afterEvaluate {
     publishing {
