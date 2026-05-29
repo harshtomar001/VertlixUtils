@@ -1,7 +1,5 @@
 plugins {
-   
-    id("com.android.library") version "8.2.2" 
-
+    id("com.android.library") version "8.2.2"
     id("maven-publish")
 }
 
@@ -12,6 +10,12 @@ android {
     defaultConfig {
         minSdk = 24
         consumerProguardFiles("consumer-rules.pro")
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
     }
 
     compileOptions {
@@ -26,7 +30,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.harshtomar001"
                 artifactId = "VertlixUtils"
-                version = "1.0.5"
+                version = project.version.toString()
 
                 from(components["release"])
             }
